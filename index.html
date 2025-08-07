@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JavaScript Animation</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f0f0f0;
+    }
+    #box {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: relative;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="box"></div>
+
+<script>
+  const box = document.getElementById("box");
+  let position = 0;
+  let colorIndex = 0;
+  const colors = ["red", "blue", "green", "orange", "purple"];
+
+  function animateBox() {
+    if (position < 300) {
+      position++;
+      box.style.left = position + "px";
+      if (position % 60 === 0) {
+        box.style.backgroundColor = colors[colorIndex % colors.length];
+        colorIndex++;
+      }
+      requestAnimationFrame(animateBox);
+    }
+  }
+
+  animateBox();
+</script>
+
+</body>
+</html>
+
+<!-- Your Name -->
+  <div class="name-tag">Created by Mahi Dankhara <br> Enrollment no.:240905040014
+  </div>
